@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VIVI - Productos medicinales naturales y consulta personalizada.">
+    <title>VIVI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <a href="#inicio" class="logo">
+                VIVI <span class="logo-tag">Natural</span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li>
+                        <button id="open-ds" class="btn btn-outline btn-sm" aria-haspopup="dialog">
+                            Design System
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="inicio">
+        <section class="hero">
+            <div class="hero-deco" aria-hidden="true">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+            </div>
+
+            <div class="container hero-flex">
+                <div class="hero-content">
+                    <p class="eyebrow">
+                        <span class="pulse-dot" aria-hidden="true"></span>
+                        100% Natural · Sin químicos
+                    </p>
+
+                    <h1 class="hero-title">
+                        Bienestar
+                        <span class="text-accent">desde la tierra</span>
+                    </h1>
+
+                    <p class="hero-lead">
+                        Plan personalizado de fitoterapia, formulado por
+                        naturópatas certificados.
+                    </p>
+
+                    <ul class="hero-stats" aria-label="Cifras clave">
+                        <li><strong>+5K</strong> familias</li>
+                        <li><strong>30+</strong> fórmulas</li>
+                        <li><strong>15</strong> años</li>
+                    </ul>
+                </div>
+
+                <article class="reserve-card" aria-labelledby="form-title" id="consulta">
+                    <header class="reserve-card-header">
+                        <span class="badge">Consulta gratuita</span>
+                        <h2 id="form-title">Recibe tu plan</h2>
+                    </header>
+
+                    <form id="contact-form"
+                          action="https://formsubmit.co/consultas@vivi.demo"
+                          method="POST"
+                          novalidate>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre"
+                                       class="form-input" required minlength="3" maxlength="50"
+                                       pattern="[A-Za-zÀ-ÿ\s]+"
+                                       placeholder="María Pérez"
+                                       autocomplete="name"
+                                       aria-describedby="nombre-hint">
+                                <small id="nombre-hint" class="form-hint" data-for="nombre"></small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono"
+                                       class="form-input" required
+                                       placeholder="099 999 9999"
+                                       pattern="[0-9+\s\-]{7,15}"
+                                       minlength="7" maxlength="15"
+                                       autocomplete="tel"
+                                       aria-describedby="telefono-hint">
+                                <small id="telefono-hint" class="form-hint" data-for="telefono"></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" name="email"
+                                   class="form-input" required
+                                   placeholder="tu@email.com"
+                                   autocomplete="email"
+                                   aria-describedby="email-hint">
+                            <small id="email-hint" class="form-hint" data-for="email"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="objetivo">¿Qué buscas?</label>
+                            <select class="form-input" id="objetivo" name="objetivo" required
+                                    aria-describedby="objetivo-hint">
+                                <option value="" disabled selected>Selecciona</option>
+                                <option value="energia">Más energía</option>
+                                <option value="sueno">Mejor descanso</option>
+                                <option value="digestion">Digestión saludable</option>
+                                <option value="inmunidad">Reforzar inmunidad</option>
+                            </select>
+                            <small id="objetivo-hint" class="form-hint" data-for="objetivo"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="form-label" id="modalidad-label">Modalidad</span>
+                            <div class="radio-group" role="radiogroup" aria-labelledby="modalidad-label">
+                                <label class="radio-pill">
+                                    <input type="radio" name="modalidad" value="online" checked>
+                                    <span>Online</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="modalidad" value="presencial">
+                                    <span>Presencial</span>
+                                </label>
+                                <label class="radio-pill">
+                                    <input type="radio" name="modalidad" value="whatsapp">
+                                    <span>WhatsApp</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <label>
+                                <input type="checkbox" id="consentimiento" name="consentimiento" required
+                                       aria-describedby="consentimiento-hint">
+                                <span>Acepto recibir información personalizada.</span>
+                            </label>
+                            <small id="consentimiento-hint" class="form-hint" data-for="consentimiento"></small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Solicitar consulta
+                            <span class="btn-arrow" aria-hidden="true">→</span>
+                        </button>
+
+                        <div id="form-feedback" class="form-feedback" role="alert"></div>
+                    </form>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-flex">
+            <strong class="logo">VIVI</strong>
+            <p>© 2026 — Salud que florece desde la raíz.</p>
+        </div>
+    </footer>
+
+    <div id="ds-modal"
+         class="modal"
+         hidden
+         aria-hidden="true"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="ds-modal-title">
+
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-content">
+            <header class="modal-header">
+                <div>
+                    <p class="eyebrow">VIVI</p>
+                    <h2 id="ds-modal-title">Design System</h2>
+                </div>
+                <button class="modal-close" data-close aria-label="Cerrar modal">&times;</button>
+            </header>
+            <div class="ds-container">
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">01</span>
+                        <div>
+                            <h3>Colores</h3>
+                            <p class="ds-desc">Paleta declarada en <code>:root</code> como custom properties.</p>
+                        </div>
+                    </header>
+                    <div class="swatch-flex">
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-primario"></div>
+                            <div class="swatch-info">
+                                <strong>Primario</strong>
+                                <code>--color-primario</code>
+                                <span class="swatch-hex">#14532d</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-secundario"></div>
+                            <div class="swatch-info">
+                                <strong>Secundario</strong>
+                                <code>--color-secundario</code>
+                                <span class="swatch-hex">#65a30d</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-accent"></div>
+                            <div class="swatch-info">
+                                <strong>Acento</strong>
+                                <code>--color-accent</code>
+                                <span class="swatch-hex">#d97706</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-superficie"></div>
+                            <div class="swatch-info">
+                                <strong>Superficie</strong>
+                                <code>--color-superficie</code>
+                                <span class="swatch-hex">#f0ede0</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-muted"></div>
+                            <div class="swatch-info">
+                                <strong>Muted</strong>
+                                <code>--color-muted</code>
+                                <span class="swatch-hex">#6b7165</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-texto"></div>
+                            <div class="swatch-info">
+                                <strong>Texto</strong>
+                                <code>--color-texto</code>
+                                <span class="swatch-hex">#1a1f1a</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">02</span>
+                        <div>
+                            <h3>Tipografía</h3>
+                            <p class="ds-desc">Plus Jakarta Sans para títulos · Inter para cuerpo.</p>
+                        </div>
+                    </header>
+                    <div class="type-stack">
+                        <div class="type-row">
+                            <h1 class="type-sample">Heading 1</h1>
+                            <code>h1 · clamp(2rem, 6vw, 2.85rem)</code>
+                        </div>
+                        <div class="type-row">
+                            <h2 class="type-sample">Heading 2</h2>
+                            <code>h2 · 1.5rem · 700</code>
+                        </div>
+                        <div class="type-row">
+                            <h3 class="type-sample">Heading 3</h3>
+                            <code>h3 · 1.15rem · 700</code>
+                        </div>
+                        <div class="type-row">
+                            <p class="type-sample type-body">Cuerpo · Inter Regular para textos corridos.</p>
+                            <code>body · 1rem · 400</code>
+                        </div>
+                        <div class="type-row">
+                            <p class="type-sample type-small">Small · usado para metadatos y labels.</p>
+                            <code>small · 0.85rem · 500</code>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">03</span>
+                        <div>
+                            <h3>Escala de espaciado</h3>
+                            <p class="ds-desc">Sistema modular usado en padding, gap y márgenes.</p>
+                        </div>
+                    </header>
+                    <div class="space-flex">
+                        <div class="space-demo"><span class="space-bar space-bar--xs"></span><code>--espaciado-xs</code><em>0.5rem</em></div>
+                        <div class="space-demo"><span class="space-bar space-bar--md"></span><code>--espaciado</code><em>1rem</em></div>
+                        <div class="space-demo"><span class="space-bar space-bar--lg"></span><code>--espaciado-md</code><em>1.5rem</em></div>
+                        <div class="space-demo"><span class="space-bar space-bar--xl"></span><code>--espaciado-lg</code><em>2.5rem</em></div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">04</span>
+                        <div>
+                            <h3>Radios y sombras</h3>
+                            <p class="ds-desc">Bordes redondeados y elevación.</p>
+                        </div>
+                    </header>
+                    <div class="ds-grid-3">
+                        <div class="effect-card effect-card--radio-sm">
+                            <span>radio-sm</span>
+                            <code>6px</code>
+                        </div>
+                        <div class="effect-card effect-card--radio">
+                            <span>radio</span>
+                            <code>12px</code>
+                        </div>
+                        <div class="effect-card effect-card--radio-lg">
+                            <span>radio-lg</span>
+                            <code>20px</code>
+                        </div>
+                    </div>
+                    <div class="ds-grid-3 ds-grid-3--shadows">
+                        <div class="effect-card effect-card--sombra-sm">
+                            <span>sombra-sm</span>
+                            <code>elevación 1</code>
+                        </div>
+                        <div class="effect-card effect-card--sombra">
+                            <span>sombra</span>
+                            <code>elevación 2</code>
+                        </div>
+                        <div class="effect-card effect-card--sombra-lg">
+                            <span>sombra-lg</span>
+                            <code>elevación 3</code>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">05</span>
+                        <div>
+                            <h3>Botones</h3>
+                            <p class="ds-desc">Variantes y estados interactivos.</p>
+                        </div>
+                    </header>
+                    <div class="ds-component-grid">
+                        <div class="ds-spec">
+                            <p class="ds-label">Primary</p>
+                            <button class="btn btn-primary">Solicitar</button>
+                        </div>
+                        <div class="ds-spec">
+                            <p class="ds-label">Outline</p>
+                            <button class="btn btn-outline">Más info</button>
+                        </div>
+                        <div class="ds-spec">
+                            <p class="ds-label">Small</p>
+                            <button class="btn btn-outline btn-sm">Acción</button>
+                        </div>
+                        <div class="ds-spec">
+                            <p class="ds-label">Block</p>
+                            <button class="btn btn-primary btn-block">Acción completa</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">06</span>
+                        <div>
+                            <h3>Elementos de formulario</h3>
+                            <p class="ds-desc">Inputs accesibles con estados focus / invalid.</p>
+                        </div>
+                    </header>
+                    <div class="ds-component-grid">
+                        <div class="ds-spec">
+                            <label class="form-label" for="ds-text">Input texto</label>
+                            <input id="ds-text" type="text" class="form-input" placeholder="Escribe algo">
+                        </div>
+                        <div class="ds-spec">
+                            <label class="form-label" for="ds-select">Select</label>
+                            <select id="ds-select" class="form-input">
+                                <option>Opción A</option>
+                                <option>Opción B</option>
+                            </select>
+                        </div>
+                        <div class="ds-spec">
+                            <span class="form-label">Radio pills</span>
+                            <div class="radio-group">
+                                <label class="radio-pill"><input type="radio" name="ds-r" checked><span>Uno</span></label>
+                                <label class="radio-pill"><input type="radio" name="ds-r"><span>Dos</span></label>
+                            </div>
+                        </div>
+                        <div class="ds-spec">
+                            <span class="form-label">Checkbox</span>
+                            <label class="form-check-label">
+                                <input type="checkbox" checked>
+                                <span>Marcar opción</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">07</span>
+                        <div>
+                            <h3>Estados &amp; alertas</h3>
+                            <p class="ds-desc">Tokens semánticos para feedback (success, danger, warning, info).</p>
+                        </div>
+                    </header>
+                    <div class="swatch-flex">
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-success"></div>
+                            <div class="swatch-info">
+                                <strong>Success</strong>
+                                <code>--color-success</code>
+                                <span class="swatch-hex">#16a34a</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-danger"></div>
+                            <div class="swatch-info">
+                                <strong>Danger</strong>
+                                <code>--color-danger</code>
+                                <span class="swatch-hex">#b91c1c</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-warning"></div>
+                            <div class="swatch-info">
+                                <strong>Warning</strong>
+                                <code>--color-warning</code>
+                                <span class="swatch-hex">#d97706</span>
+                            </div>
+                        </div>
+                        <div class="swatch-card">
+                            <div class="swatch-color swatch-info"></div>
+                            <div class="swatch-info">
+                                <strong>Info</strong>
+                                <code>--color-info</code>
+                                <span class="swatch-hex">#0284c7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-stack">
+                        <div class="alert alert-success">Operación realizada con éxito.</div>
+                        <div class="alert alert-danger">Ha ocurrido un error al procesar.</div>
+                        <div class="alert alert-warning">Revisa los datos antes de continuar.</div>
+                        <div class="alert alert-info">Tu sesión expira en 5 minutos.</div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">08</span>
+                        <div>
+                            <h3>Utilidades</h3>
+                            <p class="ds-desc">Componentes auxiliares de la marca.</p>
+                        </div>
+                    </header>
+                    <div class="ds-component-grid">
+                        <div class="ds-spec">
+                            <p class="ds-label">Badge</p>
+                            <span class="badge">Etiqueta</span>
+                        </div>
+                        <div class="ds-spec">
+                            <p class="ds-label">Eyebrow</p>
+                            <p class="eyebrow"><span class="pulse-dot"></span>En vivo</p>
+                        </div>
+                        <div class="ds-spec">
+                            <p class="ds-label">Texto acento</p>
+                            <p class="demo-acento">
+                                Texto <span class="text-accent">degradado</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ds-block">
+                    <header class="ds-block-header">
+                        <span class="ds-num">09</span>
+                        <div>
+                            <h3>Patrón responsive</h3>
+                            <p class="ds-desc">Mobile-first con flexbox · 1 columna en móvil, 2 columnas en <code>min-width: 768px</code>.</p>
+                        </div>
+                    </header>
+                    <div class="ds-layout-demo">
+                        <div>Columna A</div>
+                        <div>Columna B</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
