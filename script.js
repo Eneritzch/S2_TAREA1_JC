@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const wasOpen = item.classList.contains('is-open');
+
+            document.querySelectorAll('.faq-item.is-open').forEach(other => {
+                if (other !== item) {
+                    other.classList.remove('is-open');
+                    other.querySelector('.faq-question')
+                        ?.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            item.classList.toggle('is-open', !wasOpen);
+            btn.setAttribute('aria-expanded', String(!wasOpen));
+        });
+    });
+
     const dsModal = document.getElementById('ds-modal');
     const openDsBtn = document.getElementById('open-ds');
     let lastFocused = null;
